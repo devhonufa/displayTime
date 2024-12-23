@@ -1,0 +1,71 @@
+
+//html code
+
+<div class="counterTimer" id="counterTimer"></div>
+
+
+const counterTimer = document.getElementById("counterTimer");
+timeUpdate();
+
+setInterval(timeUpdate, 1000)
+
+
+function timeUpdate(){
+    const d = new Date();
+    // const hours = d.getHours();
+    // const minute = d.getMinutes();
+    // const second = d.getSeconds();
+
+    // counterTimer.innerHTML = `${formatTime(hours)} : ${formatTime(minute)} : ${formatTime(second)}`
+    counterTimer.innerHTML = d.toLocaleTimeString();
+}
+
+function formatTime(time){
+    // return time.toString().padStart(2, 0);
+    return `${time}`.padStart(2, 0)
+}
+
+
+
+
+// Display Time
+const counterHrs = document.getElementById("counterHrs");
+const counterMint = document.getElementById("counterMint");
+const counterSec = document.getElementById("counterSec");
+
+timeDisplay();
+
+setInterval(timeDisplay, 1000)
+
+function timeDisplay(){
+
+        const d = new Date();
+        const hours = d.getHours();
+        const minute = d.getMinutes();
+        const second = d.getSeconds();
+
+        counterHrs.innerHTML = formatTime(hours);
+        counterMint.innerHTML = formatTime(minute);
+        counterSec.innerHTML = formatTime(second);
+}
+
+function formatTime(time){
+    // return time.toString().padStart(2, 0);
+    return `${time}`.padStart(2, 0)
+}
+
+
+.counterTimer{
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    align-items: center;
+    padding: 20px 50px ;
+    cursor: pointer;
+    background-color: #f0f8ff;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 5px solid coral;
+
+
+}
